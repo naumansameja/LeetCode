@@ -1,28 +1,31 @@
-"""
-# Definition for a Node.
-class Node(object):
-    def __init__(self, val=0, left=None, right=None, next=None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.next = next
-"""
-
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution(object):
-    def connect(self, root):
-        def level_wise(node,d={}, l=0):
-            if node:
-                if l in d:
-                    d[l].append(node)
-                else:
-                    d[l] = [node]
-                d = level_wise(node.left, d, l+1)
-                d = level_wise(node.right, d,l+1)
-            return d
-        def populate(d):
-            for lst in d.values():
-                for node in range(len(lst)-1):
-                    lst[node].next = lst[node+1]
-        d = level_wise(root)
-        populate(d)
-        return root
+    def oddEvenList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next:
+            return head
+        end_list = ListNode(-1)
+        end_head = end_list
+        itr = head
+        # current = 1
+        while itr:
+            # if current & 1: #if index is odd
+            prev = itr
+            if itr.next:
+
+                end_head.next = itr.next
+                itr.next = itr.next.next
+                end_head = end_head.next
+                end_head.next = None
+                
+            itr = itr.next
+        prev.next = end_list.next
+        return head
+        
