@@ -1,2 +1,2 @@
 # LeetCode
-Solved Leetcode Problems with time and space complexities
+Solved Leetcode Problems using Python with time and space complexities
