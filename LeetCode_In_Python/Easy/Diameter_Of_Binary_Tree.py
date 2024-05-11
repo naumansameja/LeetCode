@@ -1,4 +1,9 @@
-
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
     def diameterOfBinaryTree(self, root):
         self.max = 0
@@ -12,21 +17,3 @@ class Solution:
             return -1
         diameter(root)
         return self.max
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-root = TreeNode(1)
-root.right = TreeNode(3)
-root.left = TreeNode(2)
-root.left.left = TreeNode(4)
-root.left.left.left = TreeNode(6)
-root.left.right = TreeNode(5)
-root.left.right.left = TreeNode(7)
-s=Solution()
-print(s.diameterOfBinaryTree(root))
-
