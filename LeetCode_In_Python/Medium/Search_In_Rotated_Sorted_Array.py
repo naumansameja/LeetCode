@@ -1,5 +1,5 @@
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target: int) -> int:
         def modified_binary_search(array, elt, start, end):
             mid = (start+end)//2
             if array[mid] == elt:
