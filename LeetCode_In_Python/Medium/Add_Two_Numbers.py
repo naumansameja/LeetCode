@@ -10,29 +10,16 @@ class Solution:
         carry = 0
         itr = l1
         itr2 = l2
-        while itr and itr2:
-            ans = itr.val + itr2.val + carry
-            if ans >= 10:
-                carry = 1
-                ans = ans % 10
-            else: 
-                carry = 0
-            res_itr.next = ListNode(ans)
-            res_itr = res_itr.next
-            itr = itr.next 
-            itr2 = itr2.next
-        while itr:
-            ans = itr.val + carry
-            if ans >= 10:
-                carry = 1
-                ans = ans % 10
-            else: 
-                carry = 0
-            res_itr.next = ListNode(ans)
-            res_itr = res_itr.next
-            itr = itr.next 
-        while itr2:
-            ans = itr2.val + carry
+        while itr or itr2 or carry:
+            ans = 0
+            if itr:
+                ans += itr.val
+                itr = itr.next 
+            if itr2:
+                ans += itr2.val
+                itr2 = itr2.next
+            ans += carry
+
             if ans >= 10:
                 carry = 1
                 ans = ans % 10
@@ -41,7 +28,4 @@ class Solution:
             res_itr.next = ListNode(ans)
             res_itr = res_itr.next
 
-            itr2 = itr2.next
-        if carry:
-            res_itr.next = ListNode(1)
         return res.next
