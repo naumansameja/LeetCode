@@ -1,5 +1,5 @@
 class Solution:
-    def minOperations(self, logs: List[str]) -> int:
+    def minOperations(self, logs) -> int:
         current_distance = 0
         for log in logs:
             if log == '../':
