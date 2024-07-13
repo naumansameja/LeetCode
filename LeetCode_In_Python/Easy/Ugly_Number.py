@@ -13,3 +13,5 @@ class Solution:
         n = max_divide(n,3)
         n = max_divide(n,5)
         return n == 1
+s = Solution()
+print(s.isUgly(1))
