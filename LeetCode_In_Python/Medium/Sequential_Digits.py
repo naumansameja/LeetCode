@@ -1,5 +1,5 @@
 class Solution:
-    def sequentialDigits(self, low: int, high: int) -> List[int]:
+    def sequentialDigits(self, low: int, high: int):
         def generate_number(start, n):
             num = ''
             for i in range(n):
