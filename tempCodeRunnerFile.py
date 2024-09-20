@@ -1,3 +1,2 @@
-k and temperatures[temperature] > stack[-1]:
-            index = stack.pop()
-            ans[index] = temperature - index
+el_sum,level+1)
+        maximum_level_sum(root.right, level_sum, level+1)
