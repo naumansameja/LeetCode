@@ -1,5 +1,5 @@
 class Solution:
-    def findShortestSubArray(self, nums: List[int]) -> int:
+    def findShortestSubArray(self, nums) -> int:
         counts = dict()
         max_count = 0
         for num in range(len(nums)):
